@@ -31,7 +31,7 @@ export default function BubblesCanvas({ items }: { items: BubbleItem[] }) {
     const canvas = canvasRef.current;
     if (!canvas) return;
 
-    const ctx = canvas.getContext("2d", { alpha: false });
+    const ctx = canvas.getContext("2d");
     if (!ctx) return;
 
     let rafId = 0;
@@ -62,7 +62,7 @@ export default function BubblesCanvas({ items }: { items: BubbleItem[] }) {
 
       const bubbles: SimBubble[] = visibleItems.map((item) => {
         const img = new Image();
-        img.src = item.icon; // ✅ ここが重要（publicのパス /icons/...）
+        img.src = item.icon;
         img.decoding = "async";
 
         return {
@@ -169,81 +169,74 @@ export default function BubblesCanvas({ items }: { items: BubbleItem[] }) {
     };
 
     const drawSelectedOverlayText = (b: SimBubble) => {
-  const padding = 14;
-  const maxW = b.r * 2 - padding * 2;
+      const padding = 14;
+      const maxW = b.r * 2 - padding * 2;
 
-  ctx.save();
-  ctx.beginPath();
-  ctx.arc(b.x, b.y, b.r, 0, Math.PI * 2);
-  ctx.closePath();
-  ctx.clip();
+      ctx.save();
+      ctx.beginPath();
+      ctx.arc(b.x, b.y, b.r, 0, Math.PI * 2);
+      ctx.closePath();
+      ctx.clip();
 
-  ctx.fillStyle = "rgba(0,0,0,0.28)";
-  ctx.fillRect(b.x - b.r, b.y - b.r, b.r * 2, b.r * 2);
+      ctx.fillStyle = "rgba(0,0,0,0.28)";
+      ctx.fillRect(b.x - b.r, b.y - b.r, b.r * 2, b.r * 2);
 
-  ctx.textAlign = "center";
-  ctx.textBaseline = "middle";
-  ctx.fillStyle = "rgba(255,255,255,0.95)";
+      ctx.textAlign = "center";
+      ctx.textBaseline = "middle";
+      ctx.fillStyle = "rgba(255,255,255,0.95)";
 
-  const title = b.item.name ?? "";
-  const desc = b.item.description ?? "";
+      const title = b.item.name ?? "";
+      const desc = b.item.description ?? "";
 
-  // title
-  ctx.font =
-    "600 14px ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto";
-  const titleY = b.y - 10;
-  ctx.fillText(title, b.x, titleY);
+      ctx.font =
+        "600 14px ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto";
+      const titleY = b.y - 10;
+      ctx.fillText(title, b.x, titleY);
 
-  // description
-  ctx.font =
-    "400 12px ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto";
-  const lines = wrapLines(desc, maxW).slice(0, 3);
-  const lineH = 16;
-  const startY = b.y + 14 - ((lines.length - 1) * lineH) / 2;
+      ctx.font =
+        "400 12px ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto";
+      const lines = wrapLines(desc, maxW).slice(0, 3);
+      const lineH = 16;
+      const startY = b.y + 14 - ((lines.length - 1) * lineH) / 2;
 
-  lines.forEach((ln, i) => {
-    ctx.fillText(ln, b.x, startY + i * lineH);
-  });
+      lines.forEach((ln, i) => {
+        ctx.fillText(ln, b.x, startY + i * lineH);
+      });
 
-  // ✅ link line (Open in new tab)
-  if (b.item.link) {
-    const linkText =
-      b.item.target === "_blank" ? "Open in new tab" : "Open";
+      if (b.item.link) {
+        const linkText =
+          b.item.target === "_blank" ? "Open in new tab" : "Open";
+        const linkY = startY + lines.length * lineH + 18;
 
-    const linkY = startY + lines.length * lineH + 18;
+        ctx.font =
+          "600 12px ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto";
+        ctx.fillStyle = "rgba(255,255,255,0.92)";
+        ctx.fillText(linkText, b.x, linkY);
 
-    // 色は好み：IKEAっぽく少しだけ目立たせる
-    ctx.font = "600 12px ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto";
-    ctx.fillStyle = "rgba(255,255,255,0.92)";
-    ctx.fillText(linkText, b.x, linkY);
+        const metrics = ctx.measureText(linkText);
+        const w = metrics.width;
 
-    // underline風（任意だけど “リンク感” 出る）
-    const metrics = ctx.measureText(linkText);
-    const w = metrics.width;
+        ctx.beginPath();
+        ctx.moveTo(b.x - w / 2, linkY + 7);
+        ctx.lineTo(b.x + w / 2, linkY + 7);
+        ctx.strokeStyle = "rgba(255,255,255,0.65)";
+        ctx.lineWidth = 1;
+        ctx.stroke();
 
-    ctx.beginPath();
-    ctx.moveTo(b.x - w / 2, linkY + 7);
-    ctx.lineTo(b.x + w / 2, linkY + 7);
-    ctx.strokeStyle = "rgba(255,255,255,0.65)";
-    ctx.lineWidth = 1;
-    ctx.stroke();
+        b.linkBounds = {
+          x: b.x - w / 2,
+          y: linkY - 8,
+          w,
+          h: 16,
+        };
 
-    // ✅ クリック判定用の領域を保存
-    b.linkBounds = {
-      x: b.x - w / 2,
-      y: linkY - 8,
-      w,
-      h: 16,
+        ctx.fillStyle = "rgba(255,255,255,0.95)";
+      } else {
+        b.linkBounds = undefined;
+      }
+
+      ctx.restore();
     };
-
-    // 次の描画に影響しないよう戻す
-    ctx.fillStyle = "rgba(255,255,255,0.95)";
-  } else {
-    b.linkBounds = undefined;
-  }
-
-  ctx.restore();
-};
 
     const pickBubbleIdAt = (x: number, y: number) => {
       const bubbles = [...bubblesRef.current].sort((a, b) => b.r - a.r);
@@ -280,11 +273,7 @@ export default function BubblesCanvas({ items }: { items: BubbleItem[] }) {
 
       applyRepulsion(cw, ch);
 
-      const grad = ctx.createLinearGradient(0, 0, 0, ch);
-      grad.addColorStop(0, "#0E3B73");
-      grad.addColorStop(1, "#0A4DA2");
-      ctx.fillStyle = grad;
-      ctx.fillRect(0, 0, cw, ch);
+      ctx.clearRect(0, 0, cw, ch);
 
       for (const b of bubbles) {
         const lerp = selectedId && b.item.id === selectedId ? 0.16 : 0.12;
@@ -313,9 +302,9 @@ export default function BubblesCanvas({ items }: { items: BubbleItem[] }) {
         }
 
         ctx.save();
-        ctx.shadowColor = "rgba(0,0,0,0.22)";
-        ctx.shadowBlur = 18;
-        ctx.shadowOffsetY = 8;
+        ctx.shadowColor = "rgba(18,60,90,0.14)";
+        ctx.shadowBlur = 16;
+        ctx.shadowOffsetY = 6;
         ctx.beginPath();
         ctx.arc(b.x, b.y, b.r, 0, Math.PI * 2);
         ctx.fillStyle = "rgba(0,0,0,0.01)";
@@ -338,52 +327,44 @@ export default function BubblesCanvas({ items }: { items: BubbleItem[] }) {
     };
 
     const onClick = (e: MouseEvent) => {
-        const bubbles = bubblesRef.current;
+      const bubbles = bubblesRef.current;
 
-        // クリック座標（canvas基準にした方が安全）
-        const rect = canvasRef.current!.getBoundingClientRect();
-        const x = e.clientX - rect.left;
-        const y = e.clientY - rect.top;
+      const rect = canvasRef.current!.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
 
-        const id = pickBubbleIdAt(x, y);
+      const id = pickBubbleIdAt(x, y);
 
-        // 何も当たっていない → 選択解除
-        if (!id) {
-            selectedIdRef.current = null;
+      if (!id) {
+        selectedIdRef.current = null;
+        return;
+      }
+
+      const clicked = bubbles.find((b) => b.item.id === id);
+      if (!clicked) return;
+
+      if (selectedIdRef.current === id) {
+        const lb = clicked.linkBounds;
+
+        if (lb) {
+          const insideLink =
+            x >= lb.x && x <= lb.x + lb.w && y >= lb.y && y <= lb.y + lb.h;
+
+          if (insideLink && clicked.item.link) {
+            if (clicked.item.target === "_blank") {
+              window.open(clicked.item.link, "_blank", "noopener,noreferrer");
+            } else {
+              window.location.href = clicked.item.link;
+            }
             return;
+          }
         }
 
-        const clicked = bubbles.find((b) => b.item.id === id);
-        if (!clicked) return;
+        selectedIdRef.current = null;
+        return;
+      }
 
-        // すでに選択中のバブルをクリック
-        if (selectedIdRef.current === id) {
-            const lb = clicked.linkBounds;
-
-            if (lb) {
-            const insideLink =
-                x >= lb.x &&
-                x <= lb.x + lb.w &&
-                y >= lb.y &&
-                y <= lb.y + lb.h;
-
-            if (insideLink && clicked.item.link) {
-                if (clicked.item.target === "_blank") {
-                window.open(clicked.item.link, "_blank", "noopener,noreferrer");
-                } else {
-                window.location.href = clicked.item.link;
-                }
-                return; // 遷移後は終了
-            }
-            }
-
-            // リンク以外をクリック → 解除
-            selectedIdRef.current = null;
-            return;
-        }
-
-        // 別バブルをクリック → そっちを選択
-        selectedIdRef.current = id;
+      selectedIdRef.current = id;
     };
 
     const onKeyDown = (e: KeyboardEvent) => {

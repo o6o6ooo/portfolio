@@ -30,15 +30,15 @@ export default function Home() {
       </div>
 
       <div className="pointer-events-none absolute left-6 top-6">
-        <h1 className="text-white text-2xl font-semibold tracking-tight">
+        <h1 className="text-2xl font-semibold tracking-tight text-[#123c5a]">
           Sakura Wallace
         </h1>
-        <p className="text-white/70 text-lg">
+        <p className="text-lg text-[#496f86]">
           Hi, I&apos;m Sakura a Full-Stack Engineer.
         </p>
       </div>
 
-      <footer className="fixed bottom-6 w-full text-center text-xs text-white/50 pointer-events-none">
+      <footer className="pointer-events-none fixed bottom-6 w-full text-center text-xs text-[#6f8fa1]">
         © {new Date().getFullYear()} Sakura Wallace. All rights reserved.
       </footer>
     </main>
