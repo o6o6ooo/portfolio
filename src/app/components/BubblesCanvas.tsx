@@ -3,6 +3,9 @@
 import { useEffect, useRef } from "react";
 import type { BubbleItem } from "@/data/items";
 
+const FONT_FAMILY =
+  'system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Noto Sans", Ubuntu, Cantarell, "Helvetica Neue", Oxygen, "Fira Sans", "Droid Sans", sans-serif';
+
 type SimBubble = {
   item: BubbleItem;
   img: HTMLImageElement;
@@ -188,13 +191,11 @@ export default function BubblesCanvas({ items }: { items: BubbleItem[] }) {
       const title = b.item.name ?? "";
       const desc = b.item.description ?? "";
 
-      ctx.font =
-        "600 14px ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto";
+      ctx.font = `600 14px ${FONT_FAMILY}`;
       const titleY = b.y - 10;
       ctx.fillText(title, b.x, titleY);
 
-      ctx.font =
-        "400 12px ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto";
+      ctx.font = `400 12px ${FONT_FAMILY}`;
       const lines = wrapLines(desc, maxW).slice(0, 3);
       const lineH = 16;
       const startY = b.y + 14 - ((lines.length - 1) * lineH) / 2;
@@ -208,8 +209,7 @@ export default function BubblesCanvas({ items }: { items: BubbleItem[] }) {
           b.item.target === "_blank" ? "Open in new tab" : "Open";
         const linkY = startY + lines.length * lineH + 18;
 
-        ctx.font =
-          "600 12px ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto";
+        ctx.font = `600 12px ${FONT_FAMILY}`;
         ctx.fillStyle = "rgba(255,255,255,0.92)";
         ctx.fillText(linkText, b.x, linkY);
 
