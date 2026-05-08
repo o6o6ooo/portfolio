@@ -15,7 +15,6 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Sakura Wallace",
   description: "Hi, I&apos;m Sakura a Full-Stack Engineer.",
-  themeColor: "#0E3B73",
   icons: {
     icon: "/favicon.svg",
   }
@@ -24,6 +23,7 @@ export const metadata: Metadata = {
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
+  themeColor: "#0E3B73",
   viewportFit: "cover",
 };
 
