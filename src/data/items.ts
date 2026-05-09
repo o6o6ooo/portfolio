@@ -14,7 +14,7 @@ export const items: BubbleItem[] = [
     id: "kuusi",
     name: "Kuusi",
     description: "Family photo sharing web app",
-    link: "https://kuusi-f06ab.web.app/",
+    link: "https://kuusi.app",
     icon: "/icons/kuusi.png",
     type: "work",
     target: "_blank",
