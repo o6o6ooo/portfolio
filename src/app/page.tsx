@@ -30,7 +30,7 @@ function PortfolioCard({
 
   return (
     <article
-      className="overflow-hidden rounded-[1.75rem] bg-[#f5f5f7] text-[var(--fg)] transition duration-200 hover:-translate-y-1 hover:bg-[#f0f0f2]"
+      className="overflow-hidden rounded-[1.75rem] bg-[var(--surface)] text-[var(--fg)] transition duration-200 hover:-translate-y-1 hover:bg-[var(--surface-hover)]"
     >
       <button
         type="button"
@@ -59,11 +59,11 @@ function PortfolioCard({
       </button>
 
       {isSelected ? (
-        <div className="border-t border-black/10 px-7 pb-7 pt-6">
+        <div className="border-t border-[color:var(--separator)] px-7 pb-7 pt-6">
           <p className="text-base leading-7">{item.details}</p>
           {item.link ? (
             <a
-              className="mt-5 inline-flex text-lg text-[#0066cc] hover:underline"
+              className="mt-5 inline-flex text-lg text-[var(--link)] hover:underline"
               href={item.link}
               target={item.target}
               rel={item.target === "_blank" ? "noreferrer" : undefined}
@@ -81,7 +81,7 @@ export default function Home() {
   const [selectedId, setSelectedId] = useState<string | null>(null);
 
   return (
-    <main className="min-h-svh bg-white px-8 py-20 text-[var(--fg)] sm:px-14 lg:px-24 lg:py-28">
+    <main className="min-h-svh bg-[var(--bg)] px-8 py-20 text-[var(--fg)] sm:px-14 lg:px-24 lg:py-28">
       <div className="mx-auto max-w-5xl">
         <header className="mx-auto max-w-3xl text-center">
           <h1 className="text-5xl font-semibold tracking-tight sm:text-6xl">
