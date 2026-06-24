@@ -30,7 +30,7 @@ function PortfolioCard({
 
   return (
     <article
-      className="overflow-hidden rounded-[28px] bg-[#f5f5f7] text-[#1d1d1f] transition duration-200 hover:-translate-y-1 hover:bg-[#f0f0f2]"
+      className="overflow-hidden rounded-[1.75rem] bg-[#f5f5f7] text-[#1d1d1f] transition duration-200 hover:-translate-y-1 hover:bg-[#f0f0f2]"
     >
       <button
         type="button"
