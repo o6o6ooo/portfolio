@@ -29,9 +29,7 @@ function PortfolioCard({
   const Icon = iconBySymbol[item.symbol];
 
   return (
-    <article
-      className="overflow-hidden rounded-[1.75rem] bg-[var(--surface)] text-[var(--fg)] transition duration-200 hover:-translate-y-1 hover:bg-[var(--surface-hover)]"
-    >
+    <article className="overflow-hidden rounded-[1.75rem] bg-[var(--surface)] text-[var(--fg)] transition duration-200 hover:-translate-y-1 hover:bg-[var(--surface-hover)]">
       <button
         type="button"
         className="block w-full text-left"
@@ -49,7 +47,7 @@ function PortfolioCard({
           <p className="text-sm font-semibold text-[var(--fg-secondary)]">
             {item.genre}
           </p>
-          <h2 className="mt-2 text-xl font-semibold tracking-tight sm:text-3xl">
+          <h2 className="mt-2 text-xl font-semibold sm:text-3xl">
             {item.title}
           </h2>
           <p className="mt-3 hidden text-lg leading-7 sm:block">
@@ -84,9 +82,7 @@ export default function Home() {
     <main className="min-h-svh bg-[var(--bg)] px-8 py-20 text-[var(--fg)] sm:px-14 lg:px-24 lg:py-28">
       <div className="mx-auto max-w-5xl">
         <header className="mx-auto max-w-3xl text-center">
-          <h1 className="text-5xl font-semibold tracking-tight sm:text-6xl">
-            Sakura Wallace
-          </h1>
+          <h1 className="text-5xl font-semibold sm:text-6xl">Sakura Wallace</h1>
           <p className="mt-5 text-xl leading-8">
             Full-Stack Engineer crafting focused, interactive products.
           </p>
