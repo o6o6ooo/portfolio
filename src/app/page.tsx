@@ -49,6 +49,10 @@ export default function Home() {
             <PortfolioCard key={item.id} item={item} />
           ))}
         </section>
+
+        <footer className="mt-20 text-center text-sm text-[var(--fg)] opacity-45">
+          © {new Date().getFullYear()} Sakura Wallace. All rights reserved.
+        </footer>
       </div>
     </main>
   );
