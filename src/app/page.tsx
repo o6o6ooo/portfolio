@@ -1,21 +1,21 @@
 import { items, type PortfolioItem } from "@/data/items";
 
-function PortfolioCard({
-  item,
-}: {
-  item: PortfolioItem;
-}) {
+function PortfolioCard({ item }: { item: PortfolioItem }) {
   return (
     <article className="flex h-full flex-col overflow-hidden rounded-[1.75rem] bg-[var(--surface)] text-[var(--fg)] transition duration-200 hover:-translate-y-1 hover:bg-[var(--surface-hover)]">
       <div className="aspect-[16/9] overflow-hidden">
-        <img src={item.thumbnail} alt="" className="h-full w-full object-cover" />
+        <img
+          src={item.thumbnail}
+          alt=""
+          className="h-full w-full object-cover"
+        />
       </div>
 
       <div className="flex flex-1 flex-col px-7 py-7">
         <p className="text-sm font-semibold text-[var(--fg-secondary)]">
           {item.genre}
         </p>
-        <h2 className="mt-2 text-xl font-semibold sm:text-3xl">{item.title}</h2>
+        <h2 className="mt-2 text-xl font-semibold sm:text-2xl">{item.title}</h2>
         <p className="mt-3 hidden text-lg leading-7 sm:block">{item.summary}</p>
 
         {item.link ? (
