@@ -11,7 +11,7 @@ function PortfolioCard({ item }: { item: PortfolioItem }) {
         />
       </div>
 
-      <div className="flex flex-1 flex-col px-7 py-7">
+      <div className="flex flex-1 flex-col px-6 py-6 sm:px-7 sm:py-7">
         <p className="text-sm font-semibold text-[var(--fg-secondary)]">
           {item.genre}
         </p>
@@ -35,7 +35,7 @@ function PortfolioCard({ item }: { item: PortfolioItem }) {
 
 export default function Home() {
   return (
-    <main className="min-h-svh bg-[var(--bg)] px-8 py-20 text-[var(--fg)] sm:px-14 lg:px-24 lg:py-28">
+    <main className="min-h-[100dvh] bg-[var(--bg)] px-8 pb-8 pt-20 text-[var(--fg)] sm:px-14 lg:px-24 lg:pb-10 lg:pt-28">
       <div className="mx-auto max-w-5xl">
         <header className="mx-auto max-w-3xl text-center">
           <h1 className="text-5xl font-semibold sm:text-5xl">Sakura Wallace</h1>
@@ -50,7 +50,7 @@ export default function Home() {
           ))}
         </section>
 
-        <footer className="mt-20 text-center text-sm text-[var(--fg)] opacity-45">
+        <footer className="mt-12 text-center text-sm text-[var(--fg)] opacity-45">
           © {new Date().getFullYear()} Sakura Wallace. All rights reserved.
         </footer>
       </div>
