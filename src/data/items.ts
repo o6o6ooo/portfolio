@@ -3,7 +3,6 @@ export type PortfolioItem = {
   title: string;
   genre: "Personal project" | "Work";
   summary: string;
-  details: string;
   link?: string;
   symbol: "aperture" | "blocks" | "palette" | "gamepad";
   thumbnail?: string;
@@ -28,8 +27,6 @@ export const items: PortfolioItem[] = [
     title: "Kuusi",
     genre: "Personal project",
     summary: "An iOS app for private family photo sharing with a social feed feel.",
-    details:
-      "Combines the privacy of a shared folder with the familiar flow of a social media feed, giving families a calm place to collect and revisit photos together.",
     link: "https://apps.apple.com/gb/app/kuusi/id6761270044",
     symbol: "aperture",
     thumbnail: "/thumbnails/kuusi.png",
@@ -41,8 +38,6 @@ export const items: PortfolioItem[] = [
     title: "Ikea Bubbles",
     genre: "Personal project",
     summary: "A playful browsing experiment that turns IKEA products into floating bubbles.",
-    details:
-      "Explores a more tactile product discovery pattern using motion, collision, and lightweight interaction.",
     link: "https://ikea-bubbles.vercel.app",
     symbol: "blocks",
     thumbnail: "/thumbnails/ikea-bubbles.png",
@@ -54,8 +49,6 @@ export const items: PortfolioItem[] = [
     title: "Colour Bubbles",
     genre: "Personal project",
     summary: "An interactive colour playground built around floating, responsive bubbles.",
-    details:
-      "A small interaction study for colour, movement, and touch-friendly canvas behaviour.",
     link: "https://colour-bubbles.vercel.app",
     symbol: "palette",
     thumbnail: "/thumbnails/colour-bubbles.png",
@@ -67,8 +60,6 @@ export const items: PortfolioItem[] = [
     title: "Nuzdex",
     genre: "Personal project",
     summary: "A compact Pokédex-style project for tracking Nuzlocke runs.",
-    details:
-      "Designed around quick lookup and collection-style browsing for players managing challenge runs.",
     link: "https://github.com/o6o6ooo/nuzdex",
     symbol: "gamepad",
     thumbnail: "/thumbnails/nuzdex.png",
