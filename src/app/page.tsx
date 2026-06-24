@@ -30,7 +30,7 @@ function PortfolioCard({
 
   return (
     <article
-      className="overflow-hidden rounded-[1.75rem] bg-[#f5f5f7] text-[#1d1d1f] transition duration-200 hover:-translate-y-1 hover:bg-[#f0f0f2]"
+      className="overflow-hidden rounded-[1.75rem] bg-[#f5f5f7] text-[var(--fg)] transition duration-200 hover:-translate-y-1 hover:bg-[#f0f0f2]"
     >
       <button
         type="button"
@@ -46,11 +46,13 @@ function PortfolioCard({
         </div>
 
         <div className="px-7 py-7">
-          <p className="text-sm font-semibold text-[#6e6e73]">{item.genre}</p>
+          <p className="text-sm font-semibold text-[var(--fg-secondary)]">
+            {item.genre}
+          </p>
           <h2 className="mt-2 text-xl font-semibold tracking-tight sm:text-3xl">
             {item.title}
           </h2>
-          <p className="mt-3 hidden text-lg leading-7 text-[#424245] sm:block">
+          <p className="mt-3 hidden text-lg leading-7 sm:block">
             {item.summary}
           </p>
         </div>
@@ -58,7 +60,7 @@ function PortfolioCard({
 
       {isSelected ? (
         <div className="border-t border-black/10 px-7 pb-7 pt-6">
-          <p className="text-base leading-7 text-[#424245]">{item.details}</p>
+          <p className="text-base leading-7">{item.details}</p>
           {item.link ? (
             <a
               className="mt-5 inline-flex text-lg text-[#0066cc] hover:underline"
@@ -79,13 +81,13 @@ export default function Home() {
   const [selectedId, setSelectedId] = useState<string | null>(null);
 
   return (
-    <main className="min-h-svh bg-white px-8 py-20 text-[#1d1d1f] sm:px-14 lg:px-24 lg:py-28">
+    <main className="min-h-svh bg-white px-8 py-20 text-[var(--fg)] sm:px-14 lg:px-24 lg:py-28">
       <div className="mx-auto max-w-5xl">
         <header className="mx-auto max-w-3xl text-center">
           <h1 className="text-5xl font-semibold tracking-tight sm:text-6xl">
             Sakura Wallace
           </h1>
-          <p className="mt-5 text-xl leading-8 text-[#424245]">
+          <p className="mt-5 text-xl leading-8">
             Full-Stack Engineer crafting focused, interactive products.
           </p>
         </header>
