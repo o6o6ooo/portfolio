@@ -79,8 +79,8 @@ export default function Home() {
   const [selectedId, setSelectedId] = useState<string | null>(null);
 
   return (
-    <main className="min-h-svh bg-white px-6 py-14 text-[#1d1d1f] sm:px-8 lg:px-12 lg:py-20">
-      <div className="mx-auto max-w-7xl">
+    <main className="min-h-svh bg-white px-8 py-20 text-[#1d1d1f] sm:px-14 lg:px-24 lg:py-28">
+      <div className="mx-auto max-w-5xl">
         <header className="mx-auto max-w-3xl text-center">
           <h1 className="text-5xl font-semibold tracking-tight sm:text-6xl">
             Sakura Wallace
@@ -90,7 +90,7 @@ export default function Home() {
           </p>
         </header>
 
-        <section className="mt-14 grid grid-cols-1 gap-6 lg:grid-cols-3">
+        <section className="mt-20 grid grid-cols-1 gap-10 lg:grid-cols-3">
           {items.map((item) => (
             <PortfolioCard
               key={item.id}
