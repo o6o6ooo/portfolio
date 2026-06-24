@@ -26,10 +26,10 @@ export const items: PortfolioItem[] = [
     id: "kuusi",
     title: "Kuusi",
     genre: "Personal project",
-    summary: "A family photo sharing web app focused on private, lightweight albums.",
+    summary: "An iOS app for private family photo sharing with a social feed feel.",
     details:
-      "Built as a calm place for families to collect and revisit shared photos without the noise of a social feed.",
-    link: "https://kuusi.app",
+      "Combines the privacy of a shared folder with the familiar flow of a social media feed, giving families a calm place to collect and revisit photos together.",
+    link: "https://apps.apple.com/gb/app/kuusi/id6761270044",
     symbol: "aperture",
     themeColor: "#EAF3FF",
     target: "_blank",
