@@ -1,3 +1,15 @@
+export type PortfolioItem = {
+  id: string;
+  title: string;
+  genre: "Personal project" | "Work";
+  summary: string;
+  details: string;
+  link?: string;
+  symbol: "aperture" | "blocks" | "palette" | "gamepad";
+  themeColor: string;
+  target?: "_blank" | "_self";
+};
+
 export type BubbleItem = {
   id: string;
   name: string;
@@ -9,62 +21,53 @@ export type BubbleItem = {
   target?: "_blank" | "_self";
 };
 
-export const items: BubbleItem[] = [
+export const items: PortfolioItem[] = [
   {
     id: "kuusi",
-    name: "Kuusi",
-    description: "Family photo sharing web app",
+    title: "Kuusi",
+    genre: "Personal project",
+    summary: "A family photo sharing web app focused on private, lightweight albums.",
+    details:
+      "Built as a calm place for families to collect and revisit shared photos without the noise of a social feed.",
     link: "https://kuusi.app",
-    icon: "/icons/kuusi.png",
-    type: "work",
+    symbol: "aperture",
+    themeColor: "#EAF3FF",
     target: "_blank",
   },
   {
-    id: "contact",
-    name: "Contact Me",
-    link: "mailto:066sakura@gmail.com",
-    icon: "/icons/contact.png",
-    type: "action",
-    target: "_self",
-  },
-  {
-    id: "github",
-    name: "GitHub",
-    link: "https://github.com/o6o6ooo",
-    icon: "/icons/github.png",
-    type: "action",
-    target: "_blank",
-  },
-  {
-    id: "linkedin",
-    name: "LinkedIn",
-    link: "https://www.linkedin.com/in/sakurawallace/",
-    icon: "/icons/linkedin.png",
-    type: "action",
-    target: "_blank",
-  },
-  {
-    id: "ikeabubbles",
-    name: "Ikea Bubbles",
+    id: "ikea-bubbles",
+    title: "Ikea Bubbles",
+    genre: "Personal project",
+    summary: "A playful browsing experiment that turns IKEA products into floating bubbles.",
+    details:
+      "Explores a more tactile product discovery pattern using motion, collision, and lightweight interaction.",
     link: "https://ikea-bubbles.vercel.app",
-    icon: "/icons/ikea-bubbles.png",
-    type: "work",
+    symbol: "blocks",
+    themeColor: "#FFF3D8",
     target: "_blank",
   },
   {
     id: "colour-bubbles",
-    name: "Colour Bubbles",
+    title: "Colour Bubbles",
+    genre: "Personal project",
+    summary: "An interactive colour playground built around floating, responsive bubbles.",
+    details:
+      "A small interaction study for colour, movement, and touch-friendly canvas behaviour.",
     link: "https://colour-bubbles.vercel.app",
-    icon: "/icons/colour-bubbles.png",
-    type: "work",
+    symbol: "palette",
+    themeColor: "#F4EAFE",
     target: "_blank",
   },
   {
     id: "nuzdex",
-    name: "Nuzdex",
+    title: "Nuzdex",
+    genre: "Personal project",
+    summary: "A compact Pokédex-style project for tracking Nuzlocke runs.",
+    details:
+      "Designed around quick lookup and collection-style browsing for players managing challenge runs.",
     link: "https://github.com/o6o6ooo/nuzdex",
-    icon: "/icons/nuzdex.png",
-    type: "work",
+    symbol: "gamepad",
+    themeColor: "#EAF8EF",
     target: "_blank",
   },
 ];
