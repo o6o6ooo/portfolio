@@ -47,10 +47,10 @@ function PortfolioCard({
 
         <div className="px-7 py-7">
           <p className="text-sm font-semibold text-[#6e6e73]">{item.genre}</p>
-          <h2 className="mt-2 text-3xl font-semibold tracking-tight">
+          <h2 className="mt-2 text-xl font-semibold tracking-tight sm:text-3xl">
             {item.title}
           </h2>
-          <p className="mt-3 text-lg leading-7 text-[#424245]">
+          <p className="mt-3 hidden text-lg leading-7 text-[#424245] sm:block">
             {item.summary}
           </p>
         </div>
@@ -90,7 +90,7 @@ export default function Home() {
           </p>
         </header>
 
-        <section className="mt-20 grid grid-cols-1 gap-10 lg:grid-cols-3">
+        <section className="mt-20 grid grid-cols-2 gap-5 sm:gap-10 lg:grid-cols-3">
           {items.map((item) => (
             <PortfolioCard
               key={item.id}
