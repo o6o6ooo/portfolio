@@ -37,10 +37,18 @@ function PortfolioCard({
         aria-expanded={isSelected}
       >
         <div
-          className="flex aspect-[16/9] items-center justify-center"
+          className="flex aspect-[16/9] items-center justify-center overflow-hidden"
           style={{ backgroundColor: item.themeColor }}
         >
-          <Icon aria-hidden="true" className="h-20 w-20 stroke-[1.6]" />
+          {item.thumbnail ? (
+            <img
+              src={item.thumbnail}
+              alt=""
+              className="h-full w-full object-cover"
+            />
+          ) : (
+            <Icon aria-hidden="true" className="h-20 w-20 stroke-[1.6]" />
+          )}
         </div>
 
         <div className="px-7 py-7">

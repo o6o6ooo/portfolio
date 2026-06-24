@@ -6,6 +6,7 @@ export type PortfolioItem = {
   details: string;
   link?: string;
   symbol: "aperture" | "blocks" | "palette" | "gamepad";
+  thumbnail?: string;
   themeColor: string;
   target?: "_blank" | "_self";
 };
@@ -31,6 +32,7 @@ export const items: PortfolioItem[] = [
       "Combines the privacy of a shared folder with the familiar flow of a social media feed, giving families a calm place to collect and revisit photos together.",
     link: "https://apps.apple.com/gb/app/kuusi/id6761270044",
     symbol: "aperture",
+    thumbnail: "/thumbnails/kuusi.png",
     themeColor: "#EAF3FF",
     target: "_blank",
   },
@@ -43,6 +45,7 @@ export const items: PortfolioItem[] = [
       "Explores a more tactile product discovery pattern using motion, collision, and lightweight interaction.",
     link: "https://ikea-bubbles.vercel.app",
     symbol: "blocks",
+    thumbnail: "/thumbnails/ikea-bubbles.png",
     themeColor: "#FFF3D8",
     target: "_blank",
   },
@@ -55,6 +58,7 @@ export const items: PortfolioItem[] = [
       "A small interaction study for colour, movement, and touch-friendly canvas behaviour.",
     link: "https://colour-bubbles.vercel.app",
     symbol: "palette",
+    thumbnail: "/thumbnails/colour-bubbles.png",
     themeColor: "#F4EAFE",
     target: "_blank",
   },
@@ -67,6 +71,7 @@ export const items: PortfolioItem[] = [
       "Designed around quick lookup and collection-style browsing for players managing challenge runs.",
     link: "https://github.com/o6o6ooo/nuzdex",
     symbol: "gamepad",
+    thumbnail: "/thumbnails/nuzdex.png",
     themeColor: "#EAF8EF",
     target: "_blank",
   },
