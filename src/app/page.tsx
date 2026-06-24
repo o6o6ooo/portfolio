@@ -1,37 +1,14 @@
-import {
-  Aperture,
-  Blocks,
-  Gamepad2,
-  Palette,
-  type LucideIcon,
-} from "lucide-react";
 import { items, type PortfolioItem } from "@/data/items";
-
-const iconBySymbol: Record<PortfolioItem["symbol"], LucideIcon> = {
-  aperture: Aperture,
-  blocks: Blocks,
-  gamepad: Gamepad2,
-  palette: Palette,
-};
 
 function PortfolioCard({
   item,
 }: {
   item: PortfolioItem;
 }) {
-  const Icon = iconBySymbol[item.symbol];
-
   return (
     <article className="flex h-full flex-col overflow-hidden rounded-[1.75rem] bg-[var(--surface)] text-[var(--fg)] transition duration-200 hover:-translate-y-1 hover:bg-[var(--surface-hover)]">
-      <div
-        className="flex aspect-[16/9] items-center justify-center overflow-hidden"
-        style={{ backgroundColor: item.themeColor }}
-      >
-        {item.thumbnail ? (
-          <img src={item.thumbnail} alt="" className="h-full w-full object-cover" />
-        ) : (
-          <Icon aria-hidden="true" className="h-20 w-20 stroke-[1.6]" />
-        )}
+      <div className="aspect-[16/9] overflow-hidden">
+        <img src={item.thumbnail} alt="" className="h-full w-full object-cover" />
       </div>
 
       <div className="flex flex-1 flex-col px-7 py-7">
