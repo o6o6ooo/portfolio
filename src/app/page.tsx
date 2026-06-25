@@ -20,7 +20,7 @@ function PortfolioCard({ item }: { item: PortfolioItem }) {
 
         {item.link ? (
           <a
-            className="mt-auto pt-5 text-lg text-[var(--link)] hover:underline"
+            className="mt-auto pt-5 text-base text-[var(--link)] hover:underline"
             href={item.link}
             target={item.target}
             rel={item.target === "_blank" ? "noreferrer" : undefined}
@@ -47,7 +47,8 @@ export default function Home() {
             Apple platform apps, built with care.
           </h1>
           <p className="mt-5 text-lg leading-8">
-            I&apos;m Sakura, a UK-based software engineer focused on SwiftUI, iOS.
+            I&apos;m Sakura, a UK-based software engineer focused on SwiftUI,
+            iOS.
           </p>
         </header>
 
