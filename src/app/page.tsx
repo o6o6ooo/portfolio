@@ -44,11 +44,11 @@ export default function Home() {
             className="mx-auto mb-6 h-28 w-28 object-contain sm:h-32 sm:w-32"
           />
           <h1 className="text-3xl font-semibold sm:text-3xl">
-            Apple platform apps, built with care.
+            Designed for Apple platforms.
           </h1>
           <p className="mt-5 text-lg leading-8">
-            I&apos;m Sakura, a UK-based software engineer focused on SwiftUI,
-            iOS.
+            I&apos;m Sakura, a UK-based iOS developer creating SwiftUI apps
+            focused on simplicity, quality, and delightful user experiences.
           </p>
         </header>
 
