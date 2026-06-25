@@ -1,3 +1,4 @@
+import { Github, Linkedin, Mail } from "lucide-react";
 import { items, type PortfolioItem } from "@/data/items";
 
 function PortfolioCard({ item }: { item: PortfolioItem }) {
@@ -50,6 +51,33 @@ export default function Home() {
             I&apos;m Sakura, a UK-based iOS developer creating SwiftUI apps
             focused on simplicity, quality, and delightful user experiences.
           </p>
+          <div className="mt-6 flex items-center justify-center gap-3">
+            <a
+              href="mailto:066sakura@gmail.com"
+              aria-label="Email Sakura"
+              className="flex h-11 w-11 items-center justify-center rounded-full bg-[var(--surface)] text-[var(--fg)] transition hover:bg-[var(--surface-hover)] hover:text-[var(--link)]"
+            >
+              <Mail size={20} strokeWidth={1.8} aria-hidden="true" />
+            </a>
+            <a
+              href="https://github.com/o6o6ooo"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="GitHub profile"
+              className="flex h-11 w-11 items-center justify-center rounded-full bg-[var(--surface)] text-[var(--fg)] transition hover:bg-[var(--surface-hover)] hover:text-[var(--link)]"
+            >
+              <Github size={20} strokeWidth={1.8} aria-hidden="true" />
+            </a>
+            <a
+              href="https://www.linkedin.com/in/sakurawallace/"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="LinkedIn profile"
+              className="flex h-11 w-11 items-center justify-center rounded-full bg-[var(--surface)] text-[var(--fg)] transition hover:bg-[var(--surface-hover)] hover:text-[var(--link)]"
+            >
+              <Linkedin size={20} strokeWidth={1.8} aria-hidden="true" />
+            </a>
+          </div>
         </header>
 
         <section className="mt-20 grid grid-cols-2 gap-5 sm:gap-10 lg:grid-cols-3">
