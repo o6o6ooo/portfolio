@@ -47,8 +47,7 @@ export default function Home() {
             Apple platform apps, built with care.
           </h1>
           <p className="mt-5 text-lg leading-8">
-            I'm Sakura, a UK-based software engineer focused on SwiftUI, iOS,
-            and interactive product work.
+            I&apos;m Sakura, a UK-based software engineer focused on SwiftUI, iOS.
           </p>
         </header>
 
