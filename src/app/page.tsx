@@ -38,9 +38,17 @@ export default function Home() {
     <main className="min-h-[100dvh] bg-[var(--bg)] px-8 pb-8 pt-20 text-[var(--fg)] sm:px-14 lg:px-24 lg:pb-10 lg:pt-28">
       <div className="mx-auto max-w-5xl">
         <header className="mx-auto max-w-3xl text-center">
-          <h1 className="text-5xl font-semibold sm:text-5xl">Sakura Wallace</h1>
-          <p className="mt-5 text-xl leading-8">
-            Full-Stack Engineer crafting focused, interactive products.
+          <img
+            src="/memoji.png"
+            alt=""
+            className="mx-auto mb-6 h-28 w-28 object-contain sm:h-32 sm:w-32"
+          />
+          <h1 className="text-3xl font-semibold sm:text-3xl">
+            Apple platform apps, built with care.
+          </h1>
+          <p className="mt-5 text-lg leading-8">
+            I'm Sakura, a UK-based software engineer focused on SwiftUI, iOS,
+            and interactive product work.
           </p>
         </header>
 
