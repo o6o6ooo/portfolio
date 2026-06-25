@@ -5,7 +5,7 @@ export const metadata: Metadata = {
   title: "Sakura Wallace",
   description: "Hi, I&apos;m Sakura a Full-Stack Engineer.",
   icons: {
-    icon: "/favicon.svg",
+    icon: "/memoji.png",
   }
 };
 
