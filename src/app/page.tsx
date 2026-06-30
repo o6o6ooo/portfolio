@@ -27,7 +27,7 @@ function AppStoreCard({ item }: { item: PortfolioItem }) {
             <p className="mt-1 text-base text-[var(--fg-secondary)]">
               {item.category}
             </p>
-            <p className="max-w-2xl text-xs leading-6 text-[var(--fg-secondary)] sm:text-base">
+            <p className="max-w-2xl text-sm leading-6 text-[var(--fg-secondary)]">
               {item.summary}
             </p>
           </div>
