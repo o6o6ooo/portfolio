@@ -1,4 +1,3 @@
-import { ChevronRight, Download } from "lucide-react";
 import { items, type PortfolioItem } from "@/data/items";
 
 const appStoreImages = [
@@ -38,19 +37,17 @@ function AppStoreCard({ item }: { item: PortfolioItem }) {
             href="https://kuusi.app"
             target="_blank"
             rel="noreferrer"
-            className="inline-flex h-12 items-center justify-center gap-2 rounded-full border border-[var(--surface-line)] bg-white/70 px-5 text-sm font-semibold text-[var(--accent-strong)] shadow-sm transition hover:-translate-y-0.5 hover:bg-white sm:px-6 sm:text-base"
+            className="inline-flex h-12 items-center justify-center rounded-full border border-white/75 bg-white/45 px-5 text-sm font-semibold text-[var(--accent-strong)] shadow-[inset_0_1px_0_rgba(255,255,255,0.9),0_10px_28px_rgba(92,155,209,0.14)] backdrop-blur-xl transition hover:-translate-y-0.5 hover:bg-white/65 sm:px-6 sm:text-base"
           >
             Learn More
-            <ChevronRight size={18} strokeWidth={2.2} aria-hidden="true" />
           </a>
           {item.link ? (
             <a
               href={item.link}
               target={item.target}
               rel={item.target === "_blank" ? "noreferrer" : undefined}
-              className="inline-flex h-12 items-center justify-center gap-2 rounded-full bg-[var(--accent)] px-5 text-sm font-semibold text-white shadow-[0_12px_28px_rgba(92,155,209,0.32)] transition hover:-translate-y-0.5 hover:bg-[var(--accent-strong)] sm:px-6 sm:text-base"
+              className="inline-flex h-12 items-center justify-center rounded-full border border-white/45 bg-[rgba(92,155,209,0.9)] px-5 text-sm font-semibold text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.4),0_12px_30px_rgba(92,155,209,0.28)] backdrop-blur-xl transition hover:-translate-y-0.5 hover:bg-[rgba(55,126,184,0.94)] sm:px-6 sm:text-base"
             >
-              <Download size={18} strokeWidth={2.2} aria-hidden="true" />
               Download
             </a>
           ) : null}
