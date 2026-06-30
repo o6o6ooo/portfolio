@@ -92,11 +92,12 @@ export default function Home() {
             alt=""
             className="mx-auto h-28 w-28 object-contain sm:h-32 sm:w-32"
           />
-          <h1 className="mt-8 text-4xl font-semibold tracking-normal sm:text-6xl">
+          <h1 className="mt-8 text-4xl font-semibold tracking-normal sm:text-5xl">
             My App Store Apps
           </h1>
-          <p className="mx-auto mt-5 max-w-2xl text-lg leading-8 text-[var(--fg-secondary)] sm:text-xl">
-            Apps crafted with SwiftUI and care, available on the App Store.
+          <p className="mx-auto mt-5 max-w-2xl text-lg leading-8 text-[var(--fg-secondary)]">
+            I&apos;m Sakura, a UK-based developer creating Apple-optimised apps
+            with love.
           </p>
         </header>
 
