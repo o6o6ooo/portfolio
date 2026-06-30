@@ -64,13 +64,13 @@ function AppStoreCard({ item }: { item: PortfolioItem }) {
         {appStoreImages.map((src, index) => (
           <div
             key={src}
-            className="overflow-hidden rounded-[1.5rem] bg-[linear-gradient(180deg,#f5fbff,#dceeff)] p-3 shadow-[inset_0_1px_0_rgba(255,255,255,0.85)]"
+            className="overflow-hidden rounded-[1.35rem] bg-white p-1.5 shadow-[inset_0_0_0_1px_rgba(92,155,209,0.16),0_10px_24px_rgba(92,155,209,0.1)]"
           >
-            <div className="aspect-[9/16] overflow-hidden rounded-[1.15rem] bg-white">
+            <div className="overflow-hidden rounded-[1.1rem] bg-white">
               <img
                 src={src}
                 alt={`Kuusi App Store screenshot ${index + 1}`}
-                className="h-full w-full object-cover"
+                className="h-auto w-full"
               />
             </div>
           </div>
