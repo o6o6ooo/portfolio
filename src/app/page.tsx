@@ -33,7 +33,7 @@ function AppStoreCard({ item }: { item: PortfolioItem }) {
           </div>
         </div>
 
-        <div className="flex flex-wrap gap-3 lg:justify-end">
+        <div className="flex flex-wrap justify-start gap-3 lg:justify-end">
           <a
             href="https://kuusi.app"
             target="_blank"
@@ -57,12 +57,12 @@ function AppStoreCard({ item }: { item: PortfolioItem }) {
 
       <div
         id="kuusi-preview"
-        className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4 lg:gap-5"
+        className="-mx-6 mt-8 flex snap-x gap-4 overflow-x-auto px-6 pb-2 sm:mx-0 sm:grid sm:grid-cols-2 sm:overflow-visible sm:px-0 sm:pb-0 lg:grid-cols-4 lg:gap-5"
       >
         {appStoreImages.map((src, index) => (
           <div
             key={src}
-            className="overflow-hidden rounded-[1.35rem] bg-white p-1.5 shadow-[inset_0_0_0_1px_rgba(92,155,209,0.16),0_10px_24px_rgba(92,155,209,0.1)]"
+            className="w-2/3 shrink-0 snap-start overflow-hidden rounded-[1.35rem] bg-white p-1.5 shadow-[inset_0_0_0_1px_rgba(92,155,209,0.16),0_10px_24px_rgba(92,155,209,0.1)] sm:w-auto"
           >
             <div className="overflow-hidden rounded-[1.1rem] bg-white">
               <img
