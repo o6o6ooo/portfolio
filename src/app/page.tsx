@@ -1,3 +1,4 @@
+import { Linkedin, Mail } from "lucide-react";
 import { items, type PortfolioItem } from "@/data/items";
 
 const appStoreImages = [
@@ -81,8 +82,8 @@ export default function Home() {
   const [kuusi] = items;
 
   return (
-    <main className="min-h-[100dvh] px-5 pb-8 pt-16 text-[var(--fg)] sm:px-10 lg:px-16 lg:pb-10 lg:pt-20">
-      <div className="mx-auto max-w-6xl">
+    <main className="flex min-h-[100dvh] px-5 pb-8 pt-16 text-[var(--fg)] sm:px-10 lg:px-16 lg:pb-10 lg:pt-20">
+      <div className="mx-auto flex w-full max-w-6xl flex-1 flex-col">
         <header className="mx-auto max-w-4xl text-center">
           <img
             src="/memoji.png"
@@ -102,9 +103,30 @@ export default function Home() {
           <AppStoreCard item={kuusi} />
         </section>
 
-        <footer className="mt-10 text-center text-sm text-[var(--fg)] opacity-45">
-          © {new Date().getFullYear()} Sakura Wallace. All rights reserved.
-        </footer>
+        <div className="mt-auto pt-16 text-center">
+          <div className="flex items-center justify-center gap-3">
+            <a
+              href="mailto:066sakura@gmail.com"
+              aria-label="Email Sakura"
+              className="flex h-11 w-11 items-center justify-center rounded-full border border-white/75 bg-white/45 text-[var(--accent-strong)] shadow-[inset_0_1px_0_rgba(255,255,255,0.9),0_10px_28px_rgba(92,155,209,0.14)] backdrop-blur-xl transition hover:-translate-y-0.5 hover:bg-white/65"
+            >
+              <Mail size={20} strokeWidth={1.8} aria-hidden="true" />
+            </a>
+            <a
+              href="https://www.linkedin.com/in/sakurawallace/"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="LinkedIn profile"
+              className="flex h-11 w-11 items-center justify-center rounded-full border border-white/75 bg-white/45 text-[var(--accent-strong)] shadow-[inset_0_1px_0_rgba(255,255,255,0.9),0_10px_28px_rgba(92,155,209,0.14)] backdrop-blur-xl transition hover:-translate-y-0.5 hover:bg-white/65"
+            >
+              <Linkedin size={20} strokeWidth={1.8} aria-hidden="true" />
+            </a>
+          </div>
+
+          <footer className="mt-6 text-sm text-[var(--fg)] opacity-45">
+            © {new Date().getFullYear()} Sakura Wallace. All rights reserved.
+          </footer>
+        </div>
       </div>
     </main>
   );
