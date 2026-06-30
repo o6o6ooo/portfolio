@@ -15,7 +15,7 @@ export const items: PortfolioItem[] = [
     genre: "Personal project",
     summary: "An iOS app for private family photo sharing with a social feed feel.",
     link: "https://apps.apple.com/gb/app/kuusi/id6761270044",
-    thumbnail: "/thumbnails/kuusi.png",
+    thumbnail: "/kuusi/kuusi.png",
     target: "_blank",
   },
 ];

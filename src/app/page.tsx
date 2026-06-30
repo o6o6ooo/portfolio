@@ -1,11 +1,11 @@
 import { Apple, ChevronRight, Download } from "lucide-react";
 import { items, type PortfolioItem } from "@/data/items";
 
-const featureCards = [
-  "Private family photo sharing",
-  "A calm social feed feel",
-  "Built carefully with SwiftUI",
-  "Made for everyday memories",
+const appStoreImages = [
+  "/kuusi/app%20store%201.jpg",
+  "/kuusi/app%20store%202.jpg",
+  "/kuusi/app%20store%203.jpg",
+  "/kuusi/app%20store%205.jpg",
 ];
 
 function AppStoreCard({ item }: { item: PortfolioItem }) {
@@ -13,12 +13,11 @@ function AppStoreCard({ item }: { item: PortfolioItem }) {
     <article className="overflow-hidden rounded-[2rem] border border-[var(--surface-line)] bg-[var(--surface)] p-6 shadow-[0_24px_80px_rgba(92,155,209,0.18)] backdrop-blur-2xl sm:p-8 lg:p-10">
       <div className="flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
         <div className="flex min-w-0 items-center gap-4 sm:gap-5">
-          <div className="grid h-20 w-20 shrink-0 place-items-center rounded-[1.5rem] bg-[linear-gradient(145deg,#e8f4ff,#ffffff)] shadow-[inset_0_1px_0_rgba(255,255,255,0.9),0_14px_30px_rgba(92,155,209,0.24)] sm:h-24 sm:w-24">
-            <Apple
-              size={42}
-              strokeWidth={1.7}
-              className="text-[var(--accent)]"
-              aria-hidden="true"
+          <div className="h-20 w-20 shrink-0 overflow-hidden rounded-[1.5rem] shadow-[inset_0_1px_0_rgba(255,255,255,0.9),0_14px_30px_rgba(92,155,209,0.24)] sm:h-24 sm:w-24">
+            <img
+              src="/kuusi/kuusi.png"
+              alt=""
+              className="h-full w-full object-cover"
             />
           </div>
           <div className="min-w-0">
@@ -62,21 +61,18 @@ function AppStoreCard({ item }: { item: PortfolioItem }) {
         id="kuusi-preview"
         className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4 lg:gap-5"
       >
-        {featureCards.map((title) => (
+        {appStoreImages.map((src, index) => (
           <div
-            key={title}
+            key={src}
             className="overflow-hidden rounded-[1.5rem] bg-[linear-gradient(180deg,#f5fbff,#dceeff)] p-3 shadow-[inset_0_1px_0_rgba(255,255,255,0.85)]"
           >
             <div className="aspect-[9/16] overflow-hidden rounded-[1.15rem] bg-white">
               <img
-                src={item.thumbnail}
-                alt=""
+                src={src}
+                alt={`Kuusi App Store screenshot ${index + 1}`}
                 className="h-full w-full object-cover"
               />
             </div>
-            <p className="px-2 pb-1 pt-4 text-center text-base font-semibold leading-6 text-[var(--fg)]">
-              {title}
-            </p>
           </div>
         ))}
       </div>
