@@ -1,4 +1,4 @@
-import { Apple, ChevronRight, Download } from "lucide-react";
+import { ChevronRight, Download } from "lucide-react";
 import { items, type PortfolioItem } from "@/data/items";
 
 const appStoreImages = [
@@ -87,15 +87,11 @@ export default function Home() {
     <main className="min-h-[100dvh] px-5 pb-8 pt-16 text-[var(--fg)] sm:px-10 lg:px-16 lg:pb-10 lg:pt-20">
       <div className="mx-auto max-w-7xl">
         <header className="mx-auto max-w-4xl text-center">
-          <div className="mx-auto inline-flex h-12 items-center gap-2 rounded-full border border-[var(--surface-line)] bg-white/70 px-5 text-sm font-semibold text-[var(--accent-strong)] shadow-sm backdrop-blur-xl sm:text-base">
-            <Apple
-              size={20}
-              fill="currentColor"
-              strokeWidth={0}
-              aria-hidden="true"
-            />
-            App Store
-          </div>
+          <img
+            src="/memoji.png"
+            alt=""
+            className="mx-auto h-28 w-28 object-contain sm:h-32 sm:w-32"
+          />
           <h1 className="mt-8 text-4xl font-semibold tracking-normal sm:text-6xl">
             My App Store Apps
           </h1>
