@@ -18,9 +18,7 @@
 
 html,
 body {
-  background:
-    radial-gradient(circle at 50% 0%, rgba(92, 155, 209, 0.22), transparent 36rem),
-    linear-gradient(180deg, #ffffff 0%, #f7fbff 54%, #ffffff 100%);
+  background: linear-gradient(180deg, #ffffff 0%, #f7fbff 54%, #ffffff 100%);
   color: var(--fg);
   font-family: var(--font-system);
   scroll-behavior: smooth;
