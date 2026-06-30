@@ -93,7 +93,7 @@ export default function Home() {
           <h1 className="mt-8 text-4xl font-semibold tracking-normal sm:text-5xl">
             My App Store Apps
           </h1>
-          <p className="mx-auto mt-5 max-w-2xl text-lg leading-8 text-[var(--fg-secondary)]">
+          <p className="mx-auto mt-5 max-w-2xl px-2 text-lg leading-8 text-[var(--fg-secondary)] sm:px-0">
             I&apos;m Sakura, a UK-based developer creating Apple-optimised apps
             with love.
           </p>
