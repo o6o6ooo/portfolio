@@ -14,7 +14,7 @@ function AppStoreCard({ item }: { item: PortfolioItem }) {
         <div className="flex min-w-0 items-center gap-4 sm:gap-5">
           <div className="h-20 w-20 shrink-0 overflow-hidden rounded-[1.5rem] shadow-[inset_0_1px_0_rgba(255,255,255,0.9),0_14px_30px_rgba(92,155,209,0.24)] sm:h-24 sm:w-24">
             <img
-              src="/kuusi/kuusi.png"
+              src={item.icon}
               alt=""
               className="h-full w-full object-cover"
             />
@@ -24,9 +24,9 @@ function AppStoreCard({ item }: { item: PortfolioItem }) {
               {item.title}
             </h2>
             <p className="mt-1 text-base text-[var(--fg-secondary)]">
-              Photo & Family
+              {item.category}
             </p>
-            <p className="mt-2 max-w-2xl text-sm leading-6 text-[var(--fg-secondary)] sm:text-base">
+            <p className="max-w-2xl text-xs leading-6 text-[var(--fg-secondary)] sm:text-base">
               {item.summary}
             </p>
           </div>
@@ -82,7 +82,7 @@ export default function Home() {
 
   return (
     <main className="min-h-[100dvh] px-5 pb-8 pt-16 text-[var(--fg)] sm:px-10 lg:px-16 lg:pb-10 lg:pt-20">
-      <div className="mx-auto max-w-7xl">
+      <div className="mx-auto max-w-6xl">
         <header className="mx-auto max-w-4xl text-center">
           <img
             src="/memoji.png"

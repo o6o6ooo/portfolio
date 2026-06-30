@@ -1,10 +1,10 @@
 export type PortfolioItem = {
   id: string;
   title: string;
-  genre: "Personal project" | "Work";
+  category: string;
   summary: string;
   link?: string;
-  thumbnail: string;
+  icon: string;
   target?: "_blank" | "_self";
 };
 
@@ -12,10 +12,10 @@ export const items: PortfolioItem[] = [
   {
     id: "kuusi",
     title: "Kuusi",
-    genre: "Personal project",
-    summary: "An iOS app for private family photo sharing with a social feed feel.",
+    category: "Photo & Video",
+    summary: "Share photos with your loved ones.",
     link: "https://apps.apple.com/gb/app/kuusi/id6761270044",
-    thumbnail: "/kuusi/kuusi.png",
+    icon: "/kuusi/kuusi.png",
     target: "_blank",
   },
 ];
