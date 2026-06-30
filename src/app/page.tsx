@@ -36,7 +36,9 @@ function AppStoreCard({ item }: { item: PortfolioItem }) {
 
         <div className="flex flex-wrap gap-3 lg:justify-end">
           <a
-            href="#kuusi-preview"
+            href="https://kuusi.app"
+            target="_blank"
+            rel="noreferrer"
             className="inline-flex h-12 items-center justify-center gap-2 rounded-full border border-[var(--surface-line)] bg-white/70 px-5 text-sm font-semibold text-[var(--accent-strong)] shadow-sm transition hover:-translate-y-0.5 hover:bg-white sm:px-6 sm:text-base"
           >
             Learn More
