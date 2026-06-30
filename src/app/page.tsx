@@ -57,7 +57,7 @@ function AppStoreCard({ item }: { item: PortfolioItem }) {
 
       <div
         id="kuusi-preview"
-        className="-mx-6 mt-8 flex snap-x gap-4 overflow-x-auto px-6 pb-2 sm:mx-0 sm:grid sm:grid-cols-2 sm:overflow-visible sm:px-0 sm:pb-0 lg:grid-cols-4 lg:gap-5"
+        className="-mx-6 mt-8 flex scrollbar-thin snap-x scroll-pl-6 gap-4 overflow-x-auto px-6 pb-2 sm:mx-0 sm:grid sm:grid-cols-2 sm:overflow-visible sm:px-0 sm:pb-0 lg:grid-cols-4 lg:gap-5"
       >
         {appStoreImages.map((src, index) => (
           <div
