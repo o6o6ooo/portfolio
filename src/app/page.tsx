@@ -3,10 +3,10 @@ import { items, type PortfolioItem } from "@/data/items";
 
 function AppStoreCard({ item }: { item: PortfolioItem }) {
   return (
-    <article className="overflow-hidden rounded-[2rem] border border-[var(--surface-line)] bg-[var(--surface)] p-6 shadow-[0_24px_80px_rgba(92,155,209,0.18)] backdrop-blur-2xl sm:p-8 lg:p-10">
+    <article className="overflow-hidden rounded-[2rem] border border-[var(--surface-line)] bg-[var(--surface)] p-6 shadow-[0_8px_30px_rgba(0,0,0,0.045)] backdrop-blur-2xl sm:p-8 lg:p-10">
       <div className="flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
         <div className="flex min-w-0 items-center gap-4 sm:gap-5">
-          <div className="h-20 w-20 shrink-0 overflow-hidden rounded-[1.5rem] shadow-[inset_0_1px_0_rgba(255,255,255,0.9),0_14px_30px_rgba(92,155,209,0.24)] sm:h-24 sm:w-24">
+          <div className="h-20 w-20 shrink-0 overflow-hidden rounded-[1.5rem] shadow-[0_6px_18px_rgba(0,0,0,0.08)] sm:h-24 sm:w-24">
             <img
               src={item.icon}
               alt=""
@@ -31,7 +31,7 @@ function AppStoreCard({ item }: { item: PortfolioItem }) {
             href={item.learnMoreLink}
             target="_blank"
             rel="noreferrer"
-            className="inline-flex h-12 items-center justify-center rounded-full border border-white/75 bg-white/45 px-5 text-sm font-semibold text-[var(--accent-strong)] shadow-[inset_0_1px_0_rgba(255,255,255,0.9),0_10px_28px_rgba(92,155,209,0.14)] backdrop-blur-xl transition hover:-translate-y-0.5 hover:bg-white/65 sm:px-6 sm:text-base"
+            className="inline-flex h-12 items-center justify-center rounded-full border border-black/10 bg-white/70 px-5 text-sm font-semibold text-[var(--accent-strong)] shadow-[0_1px_3px_rgba(0,0,0,0.04)] backdrop-blur-xl transition hover:-translate-y-0.5 hover:bg-white sm:px-6 sm:text-base"
           >
             Learn More
           </a>
@@ -40,7 +40,7 @@ function AppStoreCard({ item }: { item: PortfolioItem }) {
               href={item.link}
               target={item.target}
               rel={item.target === "_blank" ? "noreferrer" : undefined}
-              className="inline-flex h-12 items-center justify-center rounded-full border border-white/45 bg-[rgba(92,155,209,0.9)] px-5 text-sm font-semibold text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.4),0_12px_30px_rgba(92,155,209,0.28)] backdrop-blur-xl transition hover:-translate-y-0.5 hover:bg-[rgba(55,126,184,0.94)] sm:px-6 sm:text-base"
+              className="inline-flex h-12 items-center justify-center rounded-full border border-black/80 bg-[#1d1d1f] px-5 text-sm font-semibold text-white shadow-[0_2px_8px_rgba(0,0,0,0.12)] backdrop-blur-xl transition hover:-translate-y-0.5 hover:bg-black sm:px-6 sm:text-base"
             >
               Download
             </a>
@@ -55,7 +55,7 @@ function AppStoreCard({ item }: { item: PortfolioItem }) {
         {item.images.map((src, index) => (
           <div
             key={src}
-            className="w-2/3 shrink-0 snap-start overflow-hidden rounded-[1.35rem] shadow-[inset_0_0_0_1px_rgba(92,155,209,0.16),0_10px_24px_rgba(92,155,209,0.1)] sm:w-[calc((100%-1rem)/2)] lg:w-[calc((100%-3.75rem)/4)]"
+            className="w-2/3 shrink-0 snap-start overflow-hidden rounded-[1.35rem] shadow-[0_4px_16px_rgba(0,0,0,0.07)] sm:w-[calc((100%-1rem)/2)] lg:w-[calc((100%-3.75rem)/4)]"
           >
             <div className="overflow-hidden rounded-[1.35rem]">
               <img
@@ -101,7 +101,7 @@ export default function Home() {
             <a
               href="mailto:066sakura@gmail.com"
               aria-label="Email Sakura"
-              className="flex h-11 w-11 items-center justify-center rounded-full border border-white/75 bg-white/45 text-[var(--accent-strong)] shadow-[inset_0_1px_0_rgba(255,255,255,0.9),0_10px_28px_rgba(92,155,209,0.14)] backdrop-blur-xl transition hover:-translate-y-0.5 hover:bg-white/65"
+              className="flex h-11 w-11 items-center justify-center rounded-full border border-black/10 bg-white/70 text-[var(--accent-strong)] shadow-[0_1px_3px_rgba(0,0,0,0.04)] backdrop-blur-xl transition hover:-translate-y-0.5 hover:bg-white"
             >
               <Mail size={20} strokeWidth={1.8} aria-hidden="true" />
             </a>
@@ -110,7 +110,7 @@ export default function Home() {
               target="_blank"
               rel="noreferrer"
               aria-label="LinkedIn profile"
-              className="flex h-11 w-11 items-center justify-center rounded-full border border-white/75 bg-white/45 text-[var(--accent-strong)] shadow-[inset_0_1px_0_rgba(255,255,255,0.9),0_10px_28px_rgba(92,155,209,0.14)] backdrop-blur-xl transition hover:-translate-y-0.5 hover:bg-white/65"
+              className="flex h-11 w-11 items-center justify-center rounded-full border border-black/10 bg-white/70 text-[var(--accent-strong)] shadow-[0_1px_3px_rgba(0,0,0,0.04)] backdrop-blur-xl transition hover:-translate-y-0.5 hover:bg-white"
             >
               <Linkedin size={20} strokeWidth={1.8} aria-hidden="true" />
             </a>
