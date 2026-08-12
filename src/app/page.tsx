@@ -40,7 +40,7 @@ function AppStoreCard({ item }: { item: PortfolioItem }) {
               href={item.link}
               target={item.target}
               rel={item.target === "_blank" ? "noreferrer" : undefined}
-              className="inline-flex h-12 items-center justify-center rounded-full border border-black/80 bg-[#1d1d1f] px-5 text-sm font-semibold text-white shadow-[0_2px_8px_rgba(0,0,0,0.12)] backdrop-blur-xl transition hover:-translate-y-0.5 hover:bg-black sm:px-6 sm:text-base"
+              className="inline-flex h-12 items-center justify-center rounded-full border border-[var(--apple-blue)] bg-[var(--apple-blue)] px-5 text-sm font-semibold text-white shadow-[0_2px_8px_rgba(0,136,255,0.18)] backdrop-blur-xl transition hover:-translate-y-0.5 hover:bg-[#0077e6] sm:px-6 sm:text-base"
             >
               Download
             </a>
@@ -101,7 +101,7 @@ export default function Home() {
             <a
               href="mailto:066sakura@gmail.com"
               aria-label="Email Sakura"
-              className="flex h-11 w-11 items-center justify-center rounded-full border border-black/10 bg-white/70 text-[var(--accent-strong)] shadow-[0_1px_3px_rgba(0,0,0,0.04)] backdrop-blur-xl transition hover:-translate-y-0.5 hover:bg-white"
+              className="flex h-11 w-11 items-center justify-center rounded-full border border-black/10 bg-white/70 text-[var(--apple-blue)] shadow-[0_1px_3px_rgba(0,0,0,0.04)] backdrop-blur-xl transition hover:-translate-y-0.5 hover:bg-white"
             >
               <Mail size={20} strokeWidth={1.8} aria-hidden="true" />
             </a>
@@ -110,7 +110,7 @@ export default function Home() {
               target="_blank"
               rel="noreferrer"
               aria-label="LinkedIn profile"
-              className="flex h-11 w-11 items-center justify-center rounded-full border border-black/10 bg-white/70 text-[var(--accent-strong)] shadow-[0_1px_3px_rgba(0,0,0,0.04)] backdrop-blur-xl transition hover:-translate-y-0.5 hover:bg-white"
+              className="flex h-11 w-11 items-center justify-center rounded-full border border-black/10 bg-white/70 text-[var(--apple-blue)] shadow-[0_1px_3px_rgba(0,0,0,0.04)] backdrop-blur-xl transition hover:-translate-y-0.5 hover:bg-white"
             >
               <Linkedin size={20} strokeWidth={1.8} aria-hidden="true" />
             </a>
