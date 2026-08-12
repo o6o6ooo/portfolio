@@ -2,10 +2,12 @@ import { Linkedin, Mail } from "lucide-react";
 import { items, type PortfolioItem } from "@/data/items";
 
 const appStoreImages = [
-  "/kuusi/app%20store%201.jpg",
-  "/kuusi/app%20store%202.jpg",
-  "/kuusi/app%20store%203.jpg",
-  "/kuusi/app%20store%205.jpg",
+  "/kuusi/AppStore1.jpg",
+  "/kuusi/AppStore2.jpg",
+  "/kuusi/AppStore3.jpg",
+  "/kuusi/AppStore4.jpg",
+  "/kuusi/AppStore6.jpg",
+  "/kuusi/AppStore7.jpg",
 ];
 
 function AppStoreCard({ item }: { item: PortfolioItem }) {
@@ -57,14 +59,14 @@ function AppStoreCard({ item }: { item: PortfolioItem }) {
 
       <div
         id="kuusi-preview"
-        className="-mx-6 mt-8 flex scrollbar-thin snap-x scroll-pl-6 gap-4 overflow-x-auto px-6 pb-2 sm:mx-0 sm:grid sm:grid-cols-2 sm:overflow-visible sm:px-0 sm:pb-0 lg:grid-cols-4 lg:gap-5"
+        className="-mx-6 mt-8 flex scrollbar-thin snap-x scroll-pl-6 gap-4 overflow-x-auto px-6 pb-2 sm:mx-0 sm:px-0 lg:gap-5"
       >
         {appStoreImages.map((src, index) => (
           <div
             key={src}
-            className="w-2/3 shrink-0 snap-start overflow-hidden rounded-[1.35rem] bg-white p-1.5 shadow-[inset_0_0_0_1px_rgba(92,155,209,0.16),0_10px_24px_rgba(92,155,209,0.1)] sm:w-auto"
+            className="w-2/3 shrink-0 snap-start overflow-hidden rounded-[1.35rem] shadow-[inset_0_0_0_1px_rgba(92,155,209,0.16),0_10px_24px_rgba(92,155,209,0.1)] sm:w-[calc((100%-1rem)/2)] lg:w-[calc((100%-3.75rem)/4)]"
           >
-            <div className="overflow-hidden rounded-[1.1rem] bg-white">
+            <div className="overflow-hidden rounded-[1.35rem]">
               <img
                 src={src}
                 alt={`Kuusi App Store screenshot ${index + 1}`}
