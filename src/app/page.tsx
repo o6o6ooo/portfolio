@@ -31,7 +31,7 @@ function AppStoreCard({ item }: { item: PortfolioItem }) {
             href={item.learnMoreLink}
             target="_blank"
             rel="noreferrer"
-            className="inline-flex h-12 items-center justify-center rounded-full border border-black/10 bg-white/70 px-5 text-sm font-semibold text-[var(--accent-strong)] shadow-[0_1px_3px_rgba(0,0,0,0.04)] backdrop-blur-xl transition hover:-translate-y-0.5 hover:bg-white sm:px-6 sm:text-base"
+            className="inline-flex h-12 items-center justify-center rounded-full border border-black/10 bg-white/70 px-5 text-sm font-semibold text-[var(--fg-secondary)] shadow-[0_1px_3px_rgba(0,0,0,0.04)] backdrop-blur-xl transition hover:-translate-y-0.5 hover:bg-white sm:px-6 sm:text-base"
           >
             Learn More
           </a>
