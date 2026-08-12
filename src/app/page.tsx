@@ -101,7 +101,7 @@ export default function Home() {
             <a
               href="mailto:066sakura@gmail.com"
               aria-label="Email Sakura"
-              className="flex h-11 w-11 items-center justify-center rounded-full border border-black/10 bg-white/70 text-[var(--apple-blue)] shadow-[0_1px_3px_rgba(0,0,0,0.04)] backdrop-blur-xl transition-colors duration-200 hover:bg-white"
+              className="flex h-11 w-11 items-center justify-center rounded-full border border-black/10 bg-white/70 text-[var(--apple-blue)] shadow-[0_1px_3px_rgba(0,0,0,0.04)] backdrop-blur-xl transition-colors duration-200 hover:bg-[#f5f5f7]"
             >
               <Mail size={20} strokeWidth={1.8} aria-hidden="true" />
             </a>
@@ -110,7 +110,7 @@ export default function Home() {
               target="_blank"
               rel="noreferrer"
               aria-label="LinkedIn profile"
-              className="flex h-11 w-11 items-center justify-center rounded-full border border-black/10 bg-white/70 text-[var(--apple-blue)] shadow-[0_1px_3px_rgba(0,0,0,0.04)] backdrop-blur-xl transition-colors duration-200 hover:bg-white"
+              className="flex h-11 w-11 items-center justify-center rounded-full border border-black/10 bg-white/70 text-[var(--apple-blue)] shadow-[0_1px_3px_rgba(0,0,0,0.04)] backdrop-blur-xl transition-colors duration-200 hover:bg-[#f5f5f7]"
             >
               <Linkedin size={20} strokeWidth={1.8} aria-hidden="true" />
             </a>
