@@ -1,15 +1,6 @@
 import { Linkedin, Mail } from "lucide-react";
 import { items, type PortfolioItem } from "@/data/items";
 
-const appStoreImages = [
-  "/kuusi/AppStore1.jpg",
-  "/kuusi/AppStore2.jpg",
-  "/kuusi/AppStore3.jpg",
-  "/kuusi/AppStore4.jpg",
-  "/kuusi/AppStore6.jpg",
-  "/kuusi/AppStore7.jpg",
-];
-
 function AppStoreCard({ item }: { item: PortfolioItem }) {
   return (
     <article className="overflow-hidden rounded-[2rem] border border-[var(--surface-line)] bg-[var(--surface)] p-6 shadow-[0_24px_80px_rgba(92,155,209,0.18)] backdrop-blur-2xl sm:p-8 lg:p-10">
@@ -37,7 +28,7 @@ function AppStoreCard({ item }: { item: PortfolioItem }) {
 
         <div className="flex flex-wrap justify-start gap-3 lg:justify-end">
           <a
-            href="https://kuusi.app"
+            href={item.learnMoreLink}
             target="_blank"
             rel="noreferrer"
             className="inline-flex h-12 items-center justify-center rounded-full border border-white/75 bg-white/45 px-5 text-sm font-semibold text-[var(--accent-strong)] shadow-[inset_0_1px_0_rgba(255,255,255,0.9),0_10px_28px_rgba(92,155,209,0.14)] backdrop-blur-xl transition hover:-translate-y-0.5 hover:bg-white/65 sm:px-6 sm:text-base"
@@ -58,10 +49,10 @@ function AppStoreCard({ item }: { item: PortfolioItem }) {
       </div>
 
       <div
-        id="kuusi-preview"
+        id={`${item.id}-preview`}
         className="-mx-6 mt-8 flex scrollbar-thin snap-x scroll-pl-6 gap-4 overflow-x-auto px-6 pb-2 sm:mx-0 sm:px-0 lg:gap-5"
       >
-        {appStoreImages.map((src, index) => (
+        {item.images.map((src, index) => (
           <div
             key={src}
             className="w-2/3 shrink-0 snap-start overflow-hidden rounded-[1.35rem] shadow-[inset_0_0_0_1px_rgba(92,155,209,0.16),0_10px_24px_rgba(92,155,209,0.1)] sm:w-[calc((100%-1rem)/2)] lg:w-[calc((100%-3.75rem)/4)]"
@@ -69,7 +60,7 @@ function AppStoreCard({ item }: { item: PortfolioItem }) {
             <div className="overflow-hidden rounded-[1.35rem]">
               <img
                 src={src}
-                alt={`Kuusi App Store screenshot ${index + 1}`}
+                alt={`${item.title} App Store screenshot ${index + 1}`}
                 className="h-auto w-full"
               />
             </div>
@@ -81,8 +72,6 @@ function AppStoreCard({ item }: { item: PortfolioItem }) {
 }
 
 export default function Home() {
-  const [kuusi] = items;
-
   return (
     <main className="flex min-h-[100dvh] px-5 pb-8 pt-16 text-[var(--fg)] sm:px-10 lg:px-16 lg:pb-10 lg:pt-20">
       <div className="mx-auto flex w-full max-w-6xl flex-1 flex-col">
@@ -101,8 +90,10 @@ export default function Home() {
           </p>
         </header>
 
-        <section className="mt-12 sm:mt-16">
-          <AppStoreCard item={kuusi} />
+        <section className="mt-12 space-y-8 sm:mt-16 sm:space-y-10">
+          {items.map((item) => (
+            <AppStoreCard key={item.id} item={item} />
+          ))}
         </section>
 
         <div className="mt-auto pt-16 text-center">
