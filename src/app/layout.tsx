@@ -3,7 +3,7 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: "Sakura Wallace",
-  description: "Hi, I&apos;m Sakura a Full-Stack Engineer.",
+  description: "Hi, I’m Sakura, an enthusiastic engineer who creates Apple-optimised apps and websites with love.",
   icons: {
     icon: "/memoji.png",
   }
@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
-  themeColor: "#ffffff",
+  themeColor: "#83a5c2",
   viewportFit: "cover",
 };
 
