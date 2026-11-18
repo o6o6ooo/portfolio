@@ -35,23 +35,33 @@ function ColourBubbles() {
       // タブ復帰時にも位置が飛ばないよう、フレーム間の経過時間を制限する。
       const elapsed = previousTime === undefined ? 0 : Math.min((time - previousTime) / 1000, 0.05);
       previousTime = time;
-      positions.current = positions.current.map((bubble, index) => {
+      const nextPositions = positions.current.map((bubble) => ({ ...bubble }));
+      nextPositions.forEach((bubble, index) => {
         const origin = initialBubbles[index];
         const velocity = velocities[index];
         const minX = Math.max(10, origin.x - 14);
         const maxX = Math.min(90, origin.x + 14);
         const minY = Math.max(10, origin.y - 14);
         const maxY = Math.min(90, origin.y + 14);
+        // 丸の直径は領域の20%。更新済みの位置も含めて重なりを防ぐ。
+        const overlaps = (x: number, y: number) => nextPositions.some(
+          (other, otherIndex) => otherIndex !== index &&
+            Math.hypot(x - other.x, y - other.y) < 20,
+        );
         const x = bubble.x + velocity.x * elapsed;
+        if (x < minX || x > maxX || overlaps(x, bubble.y)) {
+          velocity.x *= -1;
+        } else {
+          bubble.x = x;
+        }
         const y = bubble.y + velocity.y * elapsed;
-        if (x < minX || x > maxX) velocity.x *= -1;
-        if (y < minY || y > maxY) velocity.y *= -1;
-        return {
-          ...bubble,
-          x: Math.max(minX, Math.min(maxX, x)),
-          y: Math.max(minY, Math.min(maxY, y)),
-        };
+        if (y < minY || y > maxY || overlaps(bubble.x, y)) {
+          velocity.y *= -1;
+        } else {
+          bubble.y = y;
+        }
       });
+      positions.current = nextPositions;
       setBubbles(positions.current);
       frameId = requestAnimationFrame(move);
     }
