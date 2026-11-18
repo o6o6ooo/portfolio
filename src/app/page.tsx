@@ -69,7 +69,7 @@ export default function Home() {
               <div className="preview-header">
                 <h3 id="preview-heading" aria-live="polite">{selectedApp.title}</h3>
                 <button type="button" className="close-preview" onClick={closePreview} aria-label={`Close ${selectedApp.title} preview`}>
-                  <X size={22} strokeWidth={1.8} aria-hidden="true" />
+                  <X size={22} strokeWidth={2.2} aria-hidden="true" />
                 </button>
               </div>
               <div className="screenshots" key={selectedApp.id}>
