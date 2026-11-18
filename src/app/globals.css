@@ -14,6 +14,8 @@ body {
   background: var(--bg);
   color: var(--fg);
   font-family: var(--font-system);
+  font-weight: 500;
+  letter-spacing: 0.02em;
 }
 
 *,
