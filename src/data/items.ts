@@ -10,8 +10,7 @@ export type PortfolioItem = {
 export const socialLinks = {
   email: "mailto:066sakura@gmail.com",
   linkedin: "https://www.linkedin.com/in/sakurawallace/",
-  // プロフィールURLを設定するとInstagramアイコンを表示する。
-  instagram: "",
+  instagram: "https://www.instagram.com/appsbyooo/",
 };
 
 export const items: PortfolioItem[] = [
@@ -19,9 +18,9 @@ export const items: PortfolioItem[] = [
     id: "lightwell",
     title: "Lightwell",
     icon: "/lightwell-christmas.png",
-    // 公開時にURLとスクリーンショット3枚のパスを追加する。
-    link: "",
-    learnMoreLink: "",
+    link: "https://apps.apple.com/gb/app/lightwell-film-camera/id6812115687",
+    learnMoreLink: "https://getlightwell.vercel.app",
+    // スクリーンショット3枚のパスを後から追加する。
     images: [],
   },
   {
