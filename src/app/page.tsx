@@ -4,6 +4,49 @@ import { useRef, useState } from "react";
 import { ArrowUpRight, Instagram, Linkedin, MailOpen, X } from "lucide-react";
 import { items, socialLinks } from "@/data/items";
 
+const initialBubbles = [
+  { color: "#FFC61E", x: 22, y: 20 },
+  { color: "#2A68B2", x: 60, y: 20 },
+  { color: "#B2E0ED", x: 86, y: 34 },
+  { color: "#DD2728", x: 37, y: 44 },
+  { color: "#027145", x: 64, y: 52 },
+  { color: "#FEF9EF", x: 18, y: 65 },
+  { color: "#89CFF0", x: 47, y: 78 },
+  { color: "#0A4A6E", x: 87, y: 71 },
+];
+
+function ColourBubbles() {
+  const [bubbles, setBubbles] = useState(initialBubbles);
+
+  function shuffleBubbles() {
+    setBubbles(initialBubbles.map((bubble) => ({
+      ...bubble,
+      x: Math.max(10, Math.min(90, bubble.x + (Math.random() - 0.5) * 28)),
+      y: Math.max(10, Math.min(90, bubble.y + (Math.random() - 0.5) * 28)),
+    })));
+  }
+
+  return (
+    <section className="websites" aria-labelledby="websites-heading">
+      <h2 id="websites-heading">Websites</h2>
+      <button type="button" className="colour-bubbles" onClick={shuffleBubbles} aria-label="Shuffle the coloured bubbles">
+        {bubbles.map((bubble) => (
+          <span
+            key={bubble.color}
+            className="colour-bubble"
+            aria-hidden="true"
+            style={{ backgroundColor: bubble.color, left: `${bubble.x}%`, top: `${bubble.y}%` }}
+          />
+        ))}
+      </button>
+      <h3>Colour Bubbles</h3>
+      <a className="website-link" href="https://colour-bubbles.vercel.app" target="_blank" rel="noreferrer">
+        Open <ArrowUpRight size={19} aria-hidden="true" />
+      </a>
+    </section>
+  );
+}
+
 export default function Home() {
   const [selectedId, setSelectedId] = useState<string | null>(null);
   const appButtons = useRef<Record<string, HTMLButtonElement | null>>({});
@@ -100,6 +143,7 @@ export default function Home() {
           )}
         </div>
       </section>
+      <ColourBubbles />
     </main>
   );
 }
