@@ -21,9 +21,9 @@ export const items: PortfolioItem[] = [
     learnMoreLink: "https://kuusi.app",
     icon: "/kuusi-christmas.png",
     images: [
-      "/kuusi/AppStore1.jpg",
-      "/kuusi/AppStore2.jpg",
-      "/kuusi/AppStore3.jpg",
+      "/Kuusi1.png",
+      "/Kuusi2.jpg",
+      "/Kuusi3.jpg",
     ],
   },
   {
@@ -32,7 +32,10 @@ export const items: PortfolioItem[] = [
     icon: "/lightwell-christmas.png",
     link: "https://apps.apple.com/gb/app/lightwell-film-camera/id6812115687",
     learnMoreLink: "https://getlightwell.vercel.app",
-    // スクリーンショット3枚のパスを後から追加する。
-    images: [],
+    images: [
+      "/Lightwell1.jpg",
+      "/Lightwell2.jpg",
+      "/Lightwell3.jpg",
+    ],
   },
 ];
