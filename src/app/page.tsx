@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { ArrowUpRight, Instagram, Linkedin, MailOpen, X } from "lucide-react";
 import { items, socialLinks } from "@/data/items";
 
@@ -17,19 +17,53 @@ const initialBubbles = [
 
 function ColourBubbles() {
   const [bubbles, setBubbles] = useState(initialBubbles);
+  const [isMoving, setIsMoving] = useState(false);
+  const positions = useRef(initialBubbles);
 
-  function shuffleBubbles() {
-    setBubbles(initialBubbles.map((bubble) => ({
-      ...bubble,
-      x: Math.max(10, Math.min(90, bubble.x + (Math.random() - 0.5) * 28)),
-      y: Math.max(10, Math.min(90, bubble.y + (Math.random() - 0.5) * 28)),
-    })));
-  }
+  useEffect(() => {
+    if (!isMoving) return;
+
+    const velocities = initialBubbles.map(() => {
+      const angle = Math.random() * Math.PI * 2;
+      const speed = 5 + Math.random() * 4;
+      return { x: Math.cos(angle) * speed, y: Math.sin(angle) * speed };
+    });
+    let frameId: number;
+    let previousTime: number | undefined;
+
+    function move(time: number) {
+      // タブ復帰時にも位置が飛ばないよう、フレーム間の経過時間を制限する。
+      const elapsed = previousTime === undefined ? 0 : Math.min((time - previousTime) / 1000, 0.05);
+      previousTime = time;
+      positions.current = positions.current.map((bubble, index) => {
+        const origin = initialBubbles[index];
+        const velocity = velocities[index];
+        const minX = Math.max(10, origin.x - 14);
+        const maxX = Math.min(90, origin.x + 14);
+        const minY = Math.max(10, origin.y - 14);
+        const maxY = Math.min(90, origin.y + 14);
+        const x = bubble.x + velocity.x * elapsed;
+        const y = bubble.y + velocity.y * elapsed;
+        if (x < minX || x > maxX) velocity.x *= -1;
+        if (y < minY || y > maxY) velocity.y *= -1;
+        return {
+          ...bubble,
+          x: Math.max(minX, Math.min(maxX, x)),
+          y: Math.max(minY, Math.min(maxY, y)),
+        };
+      });
+      setBubbles(positions.current);
+      frameId = requestAnimationFrame(move);
+    }
+
+    frameId = requestAnimationFrame(move);
+    return () => cancelAnimationFrame(frameId);
+  }, [isMoving]);
 
   return (
     <section className="websites" aria-labelledby="websites-heading">
       <h2 id="websites-heading">Websites</h2>
-      <button type="button" className="colour-bubbles" onClick={shuffleBubbles} aria-label="Shuffle the coloured bubbles">
+      <button type="button" className="colour-bubbles" onClick={() => setIsMoving((moving) => !moving)} aria-pressed={isMoving} aria-label="Animate the coloured bubbles">
         {bubbles.map((bubble) => (
           <span
             key={bubble.color}

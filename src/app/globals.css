@@ -201,7 +201,6 @@ button:focus-visible {
   height: 20%;
   border-radius: 50%;
   transform: translate(-50%, -50%);
-  transition: left 450ms ease-in-out, top 450ms ease-in-out;
 }
 .websites h3 {
   margin: 0;
@@ -322,8 +321,7 @@ button:focus-visible {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .app-icon,
-  .colour-bubble {
+  .app-icon {
     transition: none;
   }
 }
