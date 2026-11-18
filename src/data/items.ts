@@ -15,15 +15,6 @@ export const socialLinks = {
 
 export const items: PortfolioItem[] = [
   {
-    id: "lightwell",
-    title: "Lightwell",
-    icon: "/lightwell-christmas.png",
-    link: "https://apps.apple.com/gb/app/lightwell-film-camera/id6812115687",
-    learnMoreLink: "https://getlightwell.vercel.app",
-    // スクリーンショット3枚のパスを後から追加する。
-    images: [],
-  },
-  {
     id: "kuusi",
     title: "Kuusi",
     link: "https://apps.apple.com/gb/app/kuusi/id6761270044",
@@ -34,5 +25,14 @@ export const items: PortfolioItem[] = [
       "/kuusi/AppStore2.jpg",
       "/kuusi/AppStore3.jpg",
     ],
+  },
+  {
+    id: "lightwell",
+    title: "Lightwell",
+    icon: "/lightwell-christmas.png",
+    link: "https://apps.apple.com/gb/app/lightwell-film-camera/id6812115687",
+    learnMoreLink: "https://getlightwell.vercel.app",
+    // スクリーンショット3枚のパスを後から追加する。
+    images: [],
   },
 ];
